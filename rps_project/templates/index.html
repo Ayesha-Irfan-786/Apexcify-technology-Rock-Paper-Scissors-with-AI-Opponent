@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(120deg, #89f7fe, #66a6ff);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        h1 { color: #333; }
+        form { margin: 20px; }
+        button {
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            background: #fff;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #333;
+            color: #fff;
+        }
+        .result {
+            font-size: 20px;
+            margin-top: 20px;
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rock-Paper-Scissors Game</h1>
+    <form method="POST">
+        <button type="submit" name="choice" value="rock">🪨 Rock</button>
+        <button type="submit" name="choice" value="paper">📄 Paper</button>
+        <button type="submit" name="choice" value="scissors">✂️ Scissors</button>
+    </form>
+
+    {% if result %}
+    <div class="result">
+        <p>You chose: {{ user }}</p>
+        <p>Computer chose: {{ comp }}</p>
+        <h2>{{ result }}</h2>
+    </div>
+    {% endif %}
+</body>
+</html>
